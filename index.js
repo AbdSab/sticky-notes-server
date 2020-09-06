@@ -4,7 +4,7 @@ const sockets = require('./sockets');
 const notes = require('./notes');
 
 const wss = new WebSocket.Server({
-    port: 8080,
+    port: process.env.PORT || 8080,
 });
 
 wss.on('connection', socket => {
