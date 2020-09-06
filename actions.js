@@ -14,10 +14,9 @@ actions.on('notes.update', (id, data) => {
 
 actions.on('notes.delete', (id, data) => {
     notes.remove(data);
-    console.log(notes.list());
     sockets.sendExclude(id, {
         type: 'notes.delete',
-        data,
+        data: data.id,
     });
 });
 
