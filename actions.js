@@ -18,6 +18,13 @@ actions.on('notes.delete', (id, data) => {
         type: 'notes.delete',
         data: data.id,
     });
+    if(notes.list().length === 0) {
+        const note = notes.create();
+        sockets.sendAll({
+            type: 'notes.new',
+            data: note,
+        })
+    }
 });
 
 actions.on('notes.add', (id, data) => {
