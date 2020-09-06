@@ -21,6 +21,7 @@ actions.on('notes.delete', (id, data) => {
 });
 
 actions.on('notes.add', (id, data) => {
+    if(notes.list().length > 20) return;
     const note = notes.create();
     sockets.sendAll({
         type: 'notes.new',
