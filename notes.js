@@ -1,10 +1,10 @@
 const uniqid = require('uniqid');
-const notes = [{id:'0', content:'Hello', x:100, y:100, width: 128, height: 128}];
+const notes = [{id:'0', content:'', x:100, y:100, width: 128, height: 128}];
 
 const list = () => notes;
 
 const create = () => {
-    const note = {id:uniqid(), content:'Empty note ...', x:10, y:10, width: 128, height: 128}
+    const note = {id:uniqid(), content:'', x:10, y:10, width: 128, height: 128}
     notes.push(note);
     return note;
 }
